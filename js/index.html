@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Cheatsheet</title>
+    <meta name="author" content="ankitjha2603" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="../assets/image/copy.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="Explore a collection of JavaScript code snippets for common tasks and functions. Quickly reference and copy reusable code, including element selection, creating elements, animations, section comments, and function documentation. Simplify your web development workflow with this comprehensive JavaScript Cheatsheet."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, code snippets, programming, web development, front-end, back-end, code reference, developer tools, coding tips, web programming"
+    />
+
+    <meta property="og:title" content="Javascript Cheatsheet" />
+    <meta
+      property="og:description"
+      content="Explore a collection of JavaScript code snippets for common tasks and functions. Quickly reference and copy reusable code, including element selection, creating elements, animations, section comments, and function documentation. Simplify your web development workflow with this comprehensive JavaScript Cheatsheet."
+    />
+    <meta
+      property="og:url"
+      content="https://ankitjha2603.github.io/snippet-sphere/js"
+    />
+    <meta property="og:type" content="website" />
+    <!-------------------------->
+    <!-- Sitemap -->
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://ankitjha2603.github.io/sitemap.xml"
+    />
+    <!-------------------------->
+
+    <!----------------------------------------------------------------------------->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4J64SC1QY7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4J64SC1QY7");
+    </script>
+    <!--Google verification--->
+    <meta
+      name="google-site-verification"
+      content="5QsjbXuM1buDwEtnxWDKN9dE1qgf_dgz646EdwUxSWg"
+    />
+    <!----------------------------------------------------------------------------->
+    <link rel="stylesheet" href="../assets/prism/prism.css" />
+    <script src="../assets/prism/prism.js"></script>
+    <link rel="stylesheet" href="../assets/style/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <ul>
+        <li>
+          <p class="code-snippet-title">Select element</p>
+          <pre class="language-js">
+                <code>
+const select = (selection, singleElement = true) =>
+    singleElement
+      ? document.querySelector(selection)
+      : document.querySelectorAll(selection);
+                </code>
+            </pre>
+        </li>
+        <li>
+          <p class="code-snippet-title">create Element</p>
+          <pre class="language-js">
+                <code>
+function newElement(cls, content = "", tag = "div", attr = []) {
+    let element = document.createElement(tag);
+    if (cls) {
+      if (typeof cls === "object")
+        cls.forEach((clsElement) => element.classList.add(clsElement));
+      else element.classList.add(cls);
+    }
+    if (content) element.innerText = content;
+    attr.forEach((dattr) => element.setAttribute(...dattr));
+    return element;
+  }
+                </code>
+            </pre>
+        </li>
+        <li>
+          <p class="code-snippet-title">append Element</p>
+          <pre class="language-js">
+                <code>
+const append = (mainElement, ...subElements) =>
+subElements.forEach((subElement) => {
+  mainElement.append(subElement);
+});
+                </code>
+            </pre>
+        </li>
+        <li>
+          <p class="code-snippet-title">animation</p>
+          <pre class="language-js">
+                  <code>
+const animationPerSecond = 2;
+let lastTimeMainRun = 0;
+const main = (ctime) => {
+  if (ctime - lastTimeMainRun >= 1000 / animationPerSecond) {
+    lastTimeMainRun = ctime;
+    //................
+  }
+  window.requestAnimationFrame(main);
+};
+window.requestAnimationFrame(main);
+                  </code>
+              </pre>
+        </li>
+        <li>
+          <p class="code-snippet-title">Section comments</p>
+          <pre class="language-js">
+                  <code>
+//---------------------------------------------->
+//SECTION: [!section name]
+//---------------------------------------------->
+                  </code>
+              </pre>
+        </li>
+        <li>
+          <p class="code-snippet-title">function documentation</p>
+          <pre class="language-js">
+                  <code>
+ /**
+ * function explanation.
+ *
+ * @param {number} [parameter_1] - description
+ * @param {object} [object_parameter_1] - description
+ * @param {string} [options.errorMessage="default_value"] - description
+ */
+const fucntion = (parameter_1, object_parameter_1) => {};
+                  </code>
+              </pre>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

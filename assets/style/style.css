@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    font-family: 'Potta One', cursive;
+}
+
+.container {
+    width: 55vw;
+    padding: 32px 0;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+
+.toolbar-item button {
+    cursor: pointer !important;
+    color: white !important;
+    border: 1px solid white !important;
+    border-radius: 15px !important;
+    padding: 5px 14px !important;
+}
+
+.code-snippet-title {
+    font-family: cursive;
+    font-weight: 900;
+}
+
+ul {
+    list-style-type: none;
+    /* This removes the bullets from the list */
+}
+
+li {
+    margin-bottom: 30px;
+}
+
+code[class*=language-],
+pre[class*=language-] {
+    padding-top: 0em;
+    padding-bottom: 0em;
+}
